@@ -1,6 +1,6 @@
 package org.cglab3.GUI;
 
-import org.example.regtree.RTree2D;
+//import org.example.regtree.RTree2D;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
@@ -24,7 +24,7 @@ public class Lab1MenuBar extends JMenuBar {
             }
         };
         openMI.addActionListener(new OpenFileDialogActionListener(parent, textFilesFilter, filePath, () -> {
-            mw.regTreeDrawer.setRTree(RTree2D.readFromFile(filePath.toString()));
+//            mw.regTreeDrawer.setRTree(RTree2D.readFromFile(filePath.toString()));
             mw.regSearchButton.setEnabled(true);
             mw.regTreeDrawer.drawPoints();
         }));

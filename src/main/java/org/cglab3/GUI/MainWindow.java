@@ -1,7 +1,7 @@
 package org.cglab3.GUI;
 
-import org.example.GUI.Lab1MenuBar;
-import org.example.GUI.RegTreeDrawer;
+//import org.example.GUI.Lab1MenuBar;
+//import org.example.GUI.RegTreeDrawer;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -73,38 +73,38 @@ public class MainWindow extends Container {
             @Override
             public void componentResized(ComponentEvent e) {
                 super.componentResized(e);
-                if (regTreeDrawer.rtreeSet()) {
+//                if (regTreeDrawer.rtreeSet()) {
                     regTreeDrawer.drawPoints();
                     if (p1 != null && p2 != null) {
                         regTreeDrawer.drawRectangle(p1, p2);
                     }
-                }
+//                }
             }
         });
         graphicsPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                if (regTreeDrawer.rtreeSet()) {
+//                if (regTreeDrawer.rtreeSet()) {
                     super.mousePressed(e);
                     p1 = new Point2D.Double(e.getX(), e.getY());
                     Point2D.Double pointOnPanel = regTreeDrawer.adaptFromPanel(new Point2D.Double(p1.x, p1.y));
                     contrPanX1TextField.setText(pointOnPanel.x + "");
                     contrPanY1TextField.setText(pointOnPanel.y + "");
-                }
+//                }
             }
         });
 
         graphicsPanel.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
-                if (regTreeDrawer.rtreeSet()) {
+//                if (regTreeDrawer.rtreeSet()) {
                     super.mouseDragged(e);
                     p2 = new Point2D.Double(e.getX(), e.getY());
                     regTreeDrawer.drawRectangle(p1, p2);
                     Point2D.Double pointOnPanel = regTreeDrawer.adaptFromPanel(new Point2D.Double(p2.x, p2.y));
                     contrPanX2TextField.setText(pointOnPanel.x + "");
                     contrPanY2TextField.setText(pointOnPanel.y + "");
-                }
+//                }
             }
         });
 
@@ -121,7 +121,7 @@ public class MainWindow extends Container {
         return new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                if (regTreeDrawer.rtreeSet()) {
+//                if (regTreeDrawer.rtreeSet()) {
                     if (!contrPanX1TextField.getText().isBlank() &&
                             !contrPanY1TextField.getText().isBlank() &&
                             !contrPanX2TextField.getText().isBlank() &&
@@ -131,7 +131,7 @@ public class MainWindow extends Container {
                         p2 = new Point2D.Double(Double.parseDouble(contrPanX2TextField.getText()),
                                 Double.parseDouble(contrPanY2TextField.getText()));
                         regTreeDrawer.drawRectangle(regTreeDrawer.adaptToPanel(p1), regTreeDrawer.adaptToPanel(p2));
-                    }
+//                    }
                 }
             }
 
