@@ -1,4 +1,4 @@
-package org.example;
+package org.cglab3;
 
 /**
  * Hello world!

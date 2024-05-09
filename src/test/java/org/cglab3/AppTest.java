@@ -1,4 +1,4 @@
-package org.example;
+package org.cglab3;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
