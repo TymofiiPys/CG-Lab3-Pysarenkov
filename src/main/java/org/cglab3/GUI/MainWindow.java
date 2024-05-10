@@ -11,128 +11,53 @@ import java.awt.event.*;
 import java.awt.geom.Point2D;
 
 public class MainWindow extends Container {
-    public JButton regSearchButton;
     private JPanel mainPanel;
-    private JPanel controlsPanel;
     private JPanel graphicsPanel;
-    private JLabel contrPanCoordLabel;
-    private JTextField contrPanX1TextField;
-    private JLabel contrPanX1Label;
-    private JLabel contrPanY1Label;
-    private JTextField contrPanY1TextField;
-    private JPanel controlsInsidePanel;
-    public JButton showDirGrButton;
-    public JButton showChainsButton;
-    public JLabel statusLabel;
-    private JTextField contrPanX2TextField;
-    private JLabel contrPanX2Label;
-    private JTextField contrPanY2TextField;
-    private JLabel contrPanY2Label;
+    private JPanel controlPanel;
+    private JPanel controlInsidePanel;
+    private JLabel offsetLabel;
+    private JTextField textField1;
     public final Dimension mainWindowDims = new Dimension(600, 500);
-    public final BODrawer BODrawer;
-    private Point2D.Double p1, p2;
+//    public final BODrawer BODrawer;
 
     public MainWindow() {
-        // button texts
-        regSearchButton.setText("<html> <center> Здійснити <br> регіональний пошук</center> </html>");
-
-        //
-        BODrawer = new BODrawer(graphicsPanel);
-
-        regSearchButton.setEnabled(false);
-
-        //button action listeners
-        regSearchButton.addActionListener(e -> {
-            JDialog dialog = new JDialog();
-            dialog.setTitle("Регіональний пошук");
-            StringBuilder text = new StringBuilder();
-            if (p1 == null || p2 == null) {
-                text.append("<html><center> Прямокутник не задано! </center></html>");
-            } else {
-                String result = BODrawer.regionSearchAsString(p1, p2);
-                text.append("<html><center> У цей прямокутник ");
-                if (result.isBlank())
-                    text.append("не потрапляє жодна точка.");
-                else {
-                    text.append("потрапляють точки: <br>");
-                    text.append(result);
-                }
-                text.append("</center></html>");
-            }
-            JLabel label = new JLabel(text.toString());
-            label.setHorizontalAlignment(SwingConstants.CENTER);
-            dialog.add(label);
-            dialog.setSize(200, 200);
-            dialog.setResizable(true);
-            dialog.setLocationRelativeTo(null);
-            dialog.setVisible(true);
-        });
-
-        //graphics panel listeners
-        graphicsPanel.addComponentListener(new ComponentAdapter() {
-            @Override
-            public void componentResized(ComponentEvent e) {
-                super.componentResized(e);
-//                if (regTreeDrawer.rtreeSet()) {
-                    BODrawer.drawPoints();
-                    if (p1 != null && p2 != null) {
-                        BODrawer.drawRectangle(p1, p2);
-                    }
+//        nextEventButton.setText("Наступна подія");
+//        nextEventButton.setEnabled(false);
+//
+//        BODrawer = new BODrawer(graphicsPanel);
+//
+//        //button action listeners
+//        nextEventButton.addActionListener(e -> {
+//            if (BODrawer.BOSet()) {
+//                BODrawer.nextEvent();
+//                int[] nEvents = BODrawer.getEvents();
+//                if (!BODrawer.checkNextEvent()) {
+//                    nextEventButton.setEnabled(false);
 //                }
-            }
-        });
-        graphicsPanel.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-//                if (regTreeDrawer.rtreeSet()) {
-                    super.mousePressed(e);
-                    p1 = new Point2D.Double(e.getX(), e.getY());
-                    Point2D.Double pointOnPanel = BODrawer.adaptFromPanel(new Point2D.Double(p1.x, p1.y));
-                    contrPanX1TextField.setText(pointOnPanel.x + "");
-                    contrPanY1TextField.setText(pointOnPanel.y + "");
+//            }
+//        });
+//
+//        //graphics panel listeners
+//        graphicsPanel.addComponentListener(new ComponentAdapter() {
+//            @Override
+//            public void componentResized(ComponentEvent e) {
+//                super.componentResized(e);
+//                if (BODrawer.BOSet()) {
+//                    BODrawer.drawBO();
 //                }
-            }
-        });
-
-        graphicsPanel.addMouseMotionListener(new MouseMotionAdapter() {
-            @Override
-            public void mouseDragged(MouseEvent e) {
-//                if (regTreeDrawer.rtreeSet()) {
-                    super.mouseDragged(e);
-                    p2 = new Point2D.Double(e.getX(), e.getY());
-                    BODrawer.drawRectangle(p1, p2);
-                    Point2D.Double pointOnPanel = BODrawer.adaptFromPanel(new Point2D.Double(p2.x, p2.y));
-                    contrPanX2TextField.setText(pointOnPanel.x + "");
-                    contrPanY2TextField.setText(pointOnPanel.y + "");
-//                }
-            }
-        });
-
-        contrPanX1TextField.getDocument().addDocumentListener(regTFListener());
-
-        contrPanY1TextField.getDocument().addDocumentListener(regTFListener());
-
-        contrPanX2TextField.getDocument().addDocumentListener(regTFListener());
-
-        contrPanY2TextField.getDocument().addDocumentListener(regTFListener());
+//            }
+//        });
+//
+//        offset1TextField.getDocument().addDocumentListener(regTFListener());
+//
+//        offset2TextField.getDocument().addDocumentListener(regTFListener());
     }
 
     public DocumentListener regTFListener() {
         return new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-//                if (regTreeDrawer.rtreeSet()) {
-                    if (!contrPanX1TextField.getText().isBlank() &&
-                            !contrPanY1TextField.getText().isBlank() &&
-                            !contrPanX2TextField.getText().isBlank() &&
-                            !contrPanY2TextField.getText().isBlank()) {
-                        p1 = new Point2D.Double(Double.parseDouble(contrPanX1TextField.getText()),
-                                Double.parseDouble(contrPanY1TextField.getText()));
-                        p2 = new Point2D.Double(Double.parseDouble(contrPanX2TextField.getText()),
-                                Double.parseDouble(contrPanY2TextField.getText()));
-                        BODrawer.drawRectangle(BODrawer.adaptToPanel(p1), BODrawer.adaptToPanel(p2));
-//                    }
-                }
+
             }
 
             @Override
@@ -148,7 +73,7 @@ public class MainWindow extends Container {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("ЛР№2. Регіональний пошук. Метод дерева регіонів.");
+        JFrame frame = new JFrame("ЛР№3. Перетин відрізків на площині (Bentley–Ottmann).");
         MainWindow mw = new MainWindow();
         Lab1MenuBar menuBar = new Lab1MenuBar(frame, mw);
         frame.setJMenuBar(menuBar);
