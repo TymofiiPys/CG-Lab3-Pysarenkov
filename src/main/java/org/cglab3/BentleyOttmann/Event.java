@@ -21,7 +21,6 @@ class Event {
         this.eventType = eventType;
         this.segment = segment;
         this.segment2 = segment2;
-//        this.associatedPoint = intersectionPoint;
         switch (this.eventType) {
             case INTERSECTION -> {
                 this.associatedPoint = intersectionPoint;

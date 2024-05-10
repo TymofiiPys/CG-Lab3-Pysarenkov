@@ -6,7 +6,7 @@ import java.awt.geom.Point2D;
 import java.util.Optional;
 
 @Data
-public class Segment implements Comparable<Segment>{
+public class Segment implements Comparable<Segment> {
     private final Point2D.Double start;
     private final Point2D.Double end;
     private double currentY;
@@ -41,8 +41,10 @@ public class Segment implements Comparable<Segment>{
 
     @Override
     public int compareTo(Segment o) {
-//        if(this.start.y > o.start.y)
-//
-            return 0;
+        if (this.start.x < o.start.x)
+            return 1;
+        if (this.start.x > o.start.x)
+            return -1;
+        return 0;
     }
 }
