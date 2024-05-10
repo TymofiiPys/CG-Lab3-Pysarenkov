@@ -1,13 +1,12 @@
 package org.cglab3.BentleyOttmann;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.awt.geom.Point2D;
 
 @Getter
+@ToString
+@EqualsAndHashCode
 class Event {
     enum Type {INTERSECTION, START, END}
 

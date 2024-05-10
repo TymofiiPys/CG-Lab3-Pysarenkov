@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="Event creation, reading segments from file, cookies">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="Add comparing Segments, minor changes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/SegmentXComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventPointComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventPointComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Segment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Segment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -75,10 +77,23 @@
       <recent name="org.cglab3.GUI" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SegmentTest">
+  <component name="RunManager" selected="Application.test">
     <configuration name="App" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.cglab3.GUI.MainWindow" />
       <module name="CG-Lab3-Pysarenkov" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.cglab3.BentleyOttmann.test" />
+      <module name="CG-Lab3-Pysarenkov" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cglab3.BentleyOttmann.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,10 +126,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.App" />
+      <item itemvalue="Application.test" />
       <item itemvalue="JUnit.SegmentTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.test" />
         <item itemvalue="JUnit.SegmentTest" />
       </list>
     </recent_temporary>
@@ -128,7 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715243953949</updated>
       <workItem from="1715243955232" duration="14751000" />
-      <workItem from="1715354878170" duration="1521000" />
+      <workItem from="1715354878170" duration="9485000" />
     </task>
     <task id="LOCAL-00001" summary="Create essential classes, begin implementing Events and Handlers">
       <option name="closed" value="true" />
@@ -154,7 +171,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715297527941</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Change EventPointComparator to compare events instead of points">
+      <option name="closed" value="true" />
+      <created>1715360848792</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715360848792</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add comparing Segments, minor changes">
+      <option name="closed" value="true" />
+      <created>1715360917797</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715360917797</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +208,8 @@
     <MESSAGE value="Create essential classes, begin implementing Events and Handlers" />
     <MESSAGE value="Implement intersection search, comment out some stuff" />
     <MESSAGE value="Event creation, reading segments from file, cookies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Event creation, reading segments from file, cookies" />
+    <MESSAGE value="Change EventPointComparator to compare events instead of points" />
+    <MESSAGE value="Add comparing Segments, minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comparing Segments, minor changes" />
   </component>
 </project>

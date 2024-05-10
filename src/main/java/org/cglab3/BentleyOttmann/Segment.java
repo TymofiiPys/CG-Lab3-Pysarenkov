@@ -1,15 +1,32 @@
 package org.cglab3.BentleyOttmann;
 
-import lombok.Data;
+import lombok.*;
 
 import java.awt.geom.Point2D;
 import java.util.Optional;
 
-@Data
-public class Segment implements Comparable<Segment> {
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+public class Segment {
     private final Point2D.Double start;
     private final Point2D.Double end;
-    private double currentY;
+    @ToString.Exclude
+    public static double currentY;
+    @Getter(AccessLevel.NONE)
+    @ToString.Exclude
+    private final double slope;
+    @Getter(AccessLevel.NONE)
+    @ToString.Exclude
+    private final double intercept;
+
+    public Segment(Point2D.Double start, Point2D.Double end) {
+        this.start = start;
+        this.end = end;
+        this.slope = (end.y - start.y) / (end.x - start.x);
+        this.intercept = end.y - this.slope * end.x;
+    }
 
     Optional<Point2D.Double> intersection(Segment other) {
         // this segment represented as a1x + b1y = c1
@@ -39,12 +56,7 @@ public class Segment implements Comparable<Segment> {
         }
     }
 
-    @Override
-    public int compareTo(Segment o) {
-        if (this.start.x < o.start.x)
-            return 1;
-        if (this.start.x > o.start.x)
-            return -1;
-        return 0;
+    public double getCurrentX() {
+        return (currentY - this.intercept) / this.slope;
     }
 }
