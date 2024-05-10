@@ -12,7 +12,7 @@ class Event {
 
     private final Type eventType;
     private final Segment segment;
-    //Two fields for intersection event only
+    //segment2 used only for intersection event
     private final Segment segment2;
     private final Point2D.Double associatedPoint;
 

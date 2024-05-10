@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 @Log
 public class IntersectionSearch {
     @SneakyThrows(IOException.class)
-    public static IntersectionSearch readFromFile(String filename) {
+    public static ArrayList<Segment> readFromFile(String filename) {
         Stream<String> fileLines;
         List<String> lines;
         fileLines = Files.lines(Paths.get(filename));
@@ -36,11 +36,11 @@ public class IntersectionSearch {
             segments.add(new Segment(new Point2D.Double(x1, y1), new Point2D.Double(x2, y2)));
         }
 
-//        return new RTree2D(segments);
-        return new IntersectionSearch();
+        return segments;
     }
 
-    public static Point2D.Double sweep(ArrayList<Segment> segments) {
+    public static void sweep(ArrayList<Segment> segments) {
+        // Create endpoint event for each segment
         ArrayList<Event> endpointEvents = new ArrayList<>();
         for (Segment s : segments) {
             endpointEvents.add(new Event(Event.Type.START, s));
@@ -56,6 +56,7 @@ public class IntersectionSearch {
         int nEvents = 0;
         int nIntersections = 0;
 
+        // And now we run through all events!
         while (!events.isEmpty()) {
             Event e = events.poll();
             nEvents++;
@@ -73,6 +74,5 @@ public class IntersectionSearch {
                 }
             }
         }
-        return null;
     }
 }
