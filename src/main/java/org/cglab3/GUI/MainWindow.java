@@ -11,46 +11,53 @@ import java.awt.event.*;
 import java.awt.geom.Point2D;
 
 public class MainWindow extends Container {
+    public JButton nextEventButton;
     private JPanel mainPanel;
+    private JPanel controlsPanel;
     private JPanel graphicsPanel;
-    private JPanel controlPanel;
-    private JPanel controlInsidePanel;
     private JLabel offsetLabel;
-    private JTextField textField1;
+    private JLabel offset1Label;
+    private JLabel offset2Label;
+    private JTextField offset1TextField;
+    private JTextField offset2TextField;
+    private JPanel controlsInsidePanel;
+    private JButton applyOffsetsButton;
+    private JLabel nIntersectionsLabel;
+    private JLabel nEventsLabel;
     public final Dimension mainWindowDims = new Dimension(600, 500);
-//    public final BODrawer BODrawer;
+    public final BODrawer BODrawer;
 
     public MainWindow() {
-//        nextEventButton.setText("Наступна подія");
-//        nextEventButton.setEnabled(false);
-//
-//        BODrawer = new BODrawer(graphicsPanel);
-//
-//        //button action listeners
-//        nextEventButton.addActionListener(e -> {
-//            if (BODrawer.BOSet()) {
-//                BODrawer.nextEvent();
-//                int[] nEvents = BODrawer.getEvents();
-//                if (!BODrawer.checkNextEvent()) {
-//                    nextEventButton.setEnabled(false);
-//                }
-//            }
-//        });
-//
-//        //graphics panel listeners
-//        graphicsPanel.addComponentListener(new ComponentAdapter() {
-//            @Override
-//            public void componentResized(ComponentEvent e) {
-//                super.componentResized(e);
-//                if (BODrawer.BOSet()) {
-//                    BODrawer.drawBO();
-//                }
-//            }
-//        });
-//
-//        offset1TextField.getDocument().addDocumentListener(regTFListener());
-//
-//        offset2TextField.getDocument().addDocumentListener(regTFListener());
+        nextEventButton.setText("Наступна подія");
+        nextEventButton.setEnabled(false);
+
+        BODrawer = new BODrawer(graphicsPanel);
+
+        //button action listeners
+        nextEventButton.addActionListener(e -> {
+            if (BODrawer.BOSet()) {
+                BODrawer.nextEvent();
+                int[] nEvents = BODrawer.getEvents();
+                if (!BODrawer.checkNextEvent()) {
+                    nextEventButton.setEnabled(false);
+                }
+            }
+        });
+
+        //graphics panel listeners
+        graphicsPanel.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                super.componentResized(e);
+                if (BODrawer.BOSet()) {
+                    BODrawer.drawBO();
+                }
+            }
+        });
+
+        offset1TextField.getDocument().addDocumentListener(regTFListener());
+
+        offset2TextField.getDocument().addDocumentListener(regTFListener());
     }
 
     public DocumentListener regTFListener() {
@@ -83,5 +90,9 @@ public class MainWindow extends Container {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }
