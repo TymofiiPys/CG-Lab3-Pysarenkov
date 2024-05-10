@@ -24,8 +24,14 @@ public class Segment {
     public Segment(Point2D.Double start, Point2D.Double end) {
         this.start = start;
         this.end = end;
-        this.slope = (end.y - start.y) / (end.x - start.x);
-        this.intercept = end.y - this.slope * end.x;
+        if (start.equals(end)) {
+            throw new IllegalArgumentException("Man, this is not a line, its end are the same point!");
+        }
+        if (start.y == end.y) {
+            throw new IllegalArgumentException("Horizontal segments not yet supported");
+        }
+        this.slope = (end.x - start.x) != 0 ? (end.y - start.y) / (end.x - start.x) : Double.POSITIVE_INFINITY;
+        this.intercept = this.slope != Double.POSITIVE_INFINITY ? end.y - this.slope * end.x : this.slope;
     }
 
     Optional<Point2D.Double> intersection(Segment other) {
@@ -57,6 +63,6 @@ public class Segment {
     }
 
     public double getCurrentX() {
-        return (currentY - this.intercept) / this.slope;
+        return this.slope != Double.POSITIVE_INFINITY ? (currentY - this.intercept) / this.slope : end.x;
     }
 }

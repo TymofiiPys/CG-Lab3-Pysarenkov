@@ -1,6 +1,5 @@
 package org.cglab3.BentleyOttmann;
 
-import com.sun.source.tree.Tree;
 import lombok.extern.java.Log;
 
 import java.awt.geom.Point2D;
