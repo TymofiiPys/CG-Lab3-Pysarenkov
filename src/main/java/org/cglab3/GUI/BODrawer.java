@@ -2,6 +2,7 @@ package org.cglab3.GUI;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.cglab3.BentleyOttmann.Event;
 import org.cglab3.BentleyOttmann.IntersectionSearch;
 import org.cglab3.BentleyOttmann.Segment;
 
@@ -10,6 +11,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Objects;
 
 public class BODrawer {
     private IntersectionSearch BO;
@@ -19,8 +21,9 @@ public class BODrawer {
     private final Stroke segmentStroke = new BasicStroke(3, BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER);
     private final Color regularSegmentColor = Color.BLACK;
     private final Color segmentInStatusColor = new Color(182, 130, 195);
+    private final Color statusColor = Color.BLUE;
     private final Color intersectionColor = Color.YELLOW;
-    private final Color endPointColor = Color.GREEN;
+    private final Color processedEventColor = Color.GREEN;
 
     @Setter
     private int[] offsets;
@@ -126,7 +129,26 @@ public class BODrawer {
         for (Segment s : BO.getStatus()) {
             gr.drawLine((int) s.getStart().x, (int) s.getStart().y, (int) s.getEnd().x, (int) s.getEnd().y);
         }
-        gr.set
+        gr.setColor(processedEventColor);
+        for (Event e : BO.getProcessedEvents()) {
+            if (Objects.requireNonNull(e.getEventType()) == Event.Type.INTERSECTION) {
+                gr.setColor(intersectionColor);
+            } else {
+                gr.setColor(processedEventColor);
+            }
+            Point2D.Double p = e.getAssociatedPoint();
+            gr.fillOval((int) (p.x - nodesRad), (int) (p.y - nodesRad), 2 * nodesRad, 2 * nodesRad);
+        }
+        gr.setColor(intersectionColor);
+        BO.getEvents().stream().filter(event -> event.getEventType() == Event.Type.INTERSECTION).forEach(
+                event -> {
+                    Point2D.Double p = event.getAssociatedPoint();
+                    gr.fillOval((int) (p.x - nodesRad), (int) (p.y - nodesRad), 2 * nodesRad, 2 * nodesRad);
+                }
+        );
+        gr.setColor(statusColor);
+        int currentY = (int) BO.getProcessedEvents().getLast().getAssociatedPoint().y;
+        gr.drawLine(50, currentY, panelDraw.getWidth() - 50, currentY);
     }
 
     public void nextEvent() {
@@ -136,5 +158,9 @@ public class BODrawer {
 
     public boolean checkNextEvent() {
         return !BO.getEvents().isEmpty();
+    }
+
+    public int[] getEvents() {
+        return new int[]{BO.getNEvents(), BO.getNIntersections()};
     }
 }

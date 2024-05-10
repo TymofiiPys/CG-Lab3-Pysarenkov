@@ -1,18 +1,10 @@
 package org.cglab3.BentleyOttmann;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.extern.java.Log;
 import org.cglab3.exception.EmptyQueueException;
 
-import java.awt.geom.Point2D;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
-import java.util.concurrent.CompletionException;
-import java.util.stream.Stream;
 
 @Log
 @Getter
@@ -56,12 +48,8 @@ public class IntersectionSearch {
                 nIntersections++;
                 EventHandler.handleIntersectionEvent(e.getSegment(), e.getSegment2(), events, status);
             }
-            case START -> {
-                EventHandler.handleStartEvent(e.getSegment(), events, status);
-            }
-            case END -> {
-                EventHandler.handleEndEvent(e.getSegment(), events, status);
-            }
+            case START -> EventHandler.handleStartEvent(e.getSegment(), events, status);
+            case END -> EventHandler.handleEndEvent(e.getSegment(), events, status);
         }
     }
 }

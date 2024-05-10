@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="comments">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/exception/EmptyQueueException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/util/SegmentParser.java" afterDir="false" />
+    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="do drawing pt 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/Lab1MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/Lab1MenuBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/RegTreeDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/BODrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/BODrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/BODrawer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715243953949</updated>
       <workItem from="1715243955232" duration="14751000" />
-      <workItem from="1715354878170" duration="14979000" />
+      <workItem from="1715354878170" duration="16063000" />
     </task>
     <task id="LOCAL-00001" summary="Create essential classes, begin implementing Events and Handlers">
       <option name="closed" value="true" />
@@ -195,7 +191,31 @@
       <option name="project" value="LOCAL" />
       <updated>1715369665940</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="optimise for step-by-step solving">
+      <option name="closed" value="true" />
+      <created>1715379240965</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715379240965</updated>
+    </task>
+    <task id="LOCAL-00010" summary="segment parse separately from intersectionsearch">
+      <option name="closed" value="true" />
+      <created>1715379293980</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715379293980</updated>
+    </task>
+    <task id="LOCAL-00011" summary="do drawing pt 1">
+      <option name="closed" value="true" />
+      <created>1715379315398</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715379315398</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +241,9 @@
     <MESSAGE value="Add event handling, not tested, and never will be &gt;:)" />
     <MESSAGE value="Add Segment arg check" />
     <MESSAGE value="comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="comments" />
+    <MESSAGE value="optimise for step-by-step solving" />
+    <MESSAGE value="segment parse separately from intersectionsearch" />
+    <MESSAGE value="do drawing pt 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="do drawing pt 1" />
   </component>
 </project>

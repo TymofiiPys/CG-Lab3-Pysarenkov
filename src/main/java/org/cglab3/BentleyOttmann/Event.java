@@ -8,7 +8,7 @@ import java.awt.geom.Point2D;
 @ToString
 @EqualsAndHashCode
 public class Event {
-    enum Type {INTERSECTION, START, END}
+    public enum Type {INTERSECTION, START, END}
 
     private final Type eventType;
     private final Segment segment;
