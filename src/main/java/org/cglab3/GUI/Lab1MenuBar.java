@@ -26,7 +26,7 @@ public class Lab1MenuBar extends JMenuBar {
         openMI.addActionListener(new OpenFileDialogActionListener(parent, textFilesFilter, filePath, () -> {
 //            mw.regTreeDrawer.setRTree(RTree2D.readFromFile(filePath.toString()));
             mw.regSearchButton.setEnabled(true);
-            mw.regTreeDrawer.drawPoints();
+            mw.BODrawer.drawPoints();
         }));
         JMenuItem exitMI = new JMenuItem("Вийти");
         exitMI.addActionListener(e -> System.exit(0));

@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="Add Segment arg check">
+    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="comments">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/exception/EmptyQueueException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/util/SegmentParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/Lab1MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/Lab1MenuBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/RegTreeDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/BODrawer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +129,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715243953949</updated>
       <workItem from="1715243955232" duration="14751000" />
-      <workItem from="1715354878170" duration="10282000" />
+      <workItem from="1715354878170" duration="14979000" />
     </task>
     <task id="LOCAL-00001" summary="Create essential classes, begin implementing Events and Handlers">
       <option name="closed" value="true" />
@@ -182,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715369423029</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="comments">
+      <option name="closed" value="true" />
+      <created>1715369665940</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715369665940</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +220,7 @@
     <MESSAGE value="Add comparing Segments, minor changes" />
     <MESSAGE value="Add event handling, not tested, and never will be &gt;:)" />
     <MESSAGE value="Add Segment arg check" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Segment arg check" />
+    <MESSAGE value="comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments" />
   </component>
 </project>

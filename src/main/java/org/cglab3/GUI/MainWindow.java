@@ -29,7 +29,7 @@ public class MainWindow extends Container {
     private JTextField contrPanY2TextField;
     private JLabel contrPanY2Label;
     public final Dimension mainWindowDims = new Dimension(600, 500);
-    public final RegTreeDrawer regTreeDrawer;
+    public final BODrawer BODrawer;
     private Point2D.Double p1, p2;
 
     public MainWindow() {
@@ -37,7 +37,7 @@ public class MainWindow extends Container {
         regSearchButton.setText("<html> <center> Здійснити <br> регіональний пошук</center> </html>");
 
         //
-        regTreeDrawer = new RegTreeDrawer(graphicsPanel);
+        BODrawer = new BODrawer(graphicsPanel);
 
         regSearchButton.setEnabled(false);
 
@@ -49,7 +49,7 @@ public class MainWindow extends Container {
             if (p1 == null || p2 == null) {
                 text.append("<html><center> Прямокутник не задано! </center></html>");
             } else {
-                String result = regTreeDrawer.regionSearchAsString(p1, p2);
+                String result = BODrawer.regionSearchAsString(p1, p2);
                 text.append("<html><center> У цей прямокутник ");
                 if (result.isBlank())
                     text.append("не потрапляє жодна точка.");
@@ -74,9 +74,9 @@ public class MainWindow extends Container {
             public void componentResized(ComponentEvent e) {
                 super.componentResized(e);
 //                if (regTreeDrawer.rtreeSet()) {
-                    regTreeDrawer.drawPoints();
+                    BODrawer.drawPoints();
                     if (p1 != null && p2 != null) {
-                        regTreeDrawer.drawRectangle(p1, p2);
+                        BODrawer.drawRectangle(p1, p2);
                     }
 //                }
             }
@@ -87,7 +87,7 @@ public class MainWindow extends Container {
 //                if (regTreeDrawer.rtreeSet()) {
                     super.mousePressed(e);
                     p1 = new Point2D.Double(e.getX(), e.getY());
-                    Point2D.Double pointOnPanel = regTreeDrawer.adaptFromPanel(new Point2D.Double(p1.x, p1.y));
+                    Point2D.Double pointOnPanel = BODrawer.adaptFromPanel(new Point2D.Double(p1.x, p1.y));
                     contrPanX1TextField.setText(pointOnPanel.x + "");
                     contrPanY1TextField.setText(pointOnPanel.y + "");
 //                }
@@ -100,8 +100,8 @@ public class MainWindow extends Container {
 //                if (regTreeDrawer.rtreeSet()) {
                     super.mouseDragged(e);
                     p2 = new Point2D.Double(e.getX(), e.getY());
-                    regTreeDrawer.drawRectangle(p1, p2);
-                    Point2D.Double pointOnPanel = regTreeDrawer.adaptFromPanel(new Point2D.Double(p2.x, p2.y));
+                    BODrawer.drawRectangle(p1, p2);
+                    Point2D.Double pointOnPanel = BODrawer.adaptFromPanel(new Point2D.Double(p2.x, p2.y));
                     contrPanX2TextField.setText(pointOnPanel.x + "");
                     contrPanY2TextField.setText(pointOnPanel.y + "");
 //                }
@@ -130,7 +130,7 @@ public class MainWindow extends Container {
                                 Double.parseDouble(contrPanY1TextField.getText()));
                         p2 = new Point2D.Double(Double.parseDouble(contrPanX2TextField.getText()),
                                 Double.parseDouble(contrPanY2TextField.getText()));
-                        regTreeDrawer.drawRectangle(regTreeDrawer.adaptToPanel(p1), regTreeDrawer.adaptToPanel(p2));
+                        BODrawer.drawRectangle(BODrawer.adaptToPanel(p1), BODrawer.adaptToPanel(p2));
 //                    }
                 }
             }
