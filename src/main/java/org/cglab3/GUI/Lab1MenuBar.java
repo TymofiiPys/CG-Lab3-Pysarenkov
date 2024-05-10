@@ -2,6 +2,8 @@ package org.cglab3.GUI;
 
 //import org.example.regtree.RTree2D;
 
+import org.cglab3.util.SegmentParser;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.io.File;
@@ -24,9 +26,9 @@ public class Lab1MenuBar extends JMenuBar {
             }
         };
         openMI.addActionListener(new OpenFileDialogActionListener(parent, textFilesFilter, filePath, () -> {
-//            mw.regTreeDrawer.setRTree(RTree2D.readFromFile(filePath.toString()));
-            mw.regSearchButton.setEnabled(true);
-            mw.BODrawer.drawPoints();
+            mw.BODrawer.setSegments(SegmentParser.readFromFile(filePath.toString()));
+            mw.nextEventButton.setEnabled(true);
+            mw.BODrawer.drawBO();
         }));
         JMenuItem exitMI = new JMenuItem("Вийти");
         exitMI.addActionListener(e -> System.exit(0));
