@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="do drawing pt 1">
+    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="done mainwindow">
+      <change afterPath="$PROJECT_DIR$/LineSegments2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Segment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Segment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/BODrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/BODrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,36 +32,37 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2gDtPcQzGslE0C4vetACydu929Q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Univ/CompGraphics/CG-Lab3-Pysarenkov/src/main/java/org/cglab3/GUI&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/Univ/CompGraphics/CG-Lab3-Pysarenkov",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Univ\CompGraphics\CG-Lab3-Pysarenkov" />
       <recent name="E:\Univ\CompGraphics\CG-Lab3-Pysarenkov\src\main\java\org\cglab3\GUI" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -125,7 +129,8 @@
       <option name="presentableId" value="Default" />
       <updated>1715243953949</updated>
       <workItem from="1715243955232" duration="14751000" />
-      <workItem from="1715354878170" duration="16063000" />
+      <workItem from="1715354878170" duration="18559000" />
+      <workItem from="1715506415619" duration="3141000" />
     </task>
     <task id="LOCAL-00001" summary="Create essential classes, begin implementing Events and Handlers">
       <option name="closed" value="true" />
@@ -215,7 +220,39 @@
       <option name="project" value="LOCAL" />
       <updated>1715379315398</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="do drawing pt 2">
+      <option name="closed" value="true" />
+      <created>1715380262402</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715380262402</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update menu buttons">
+      <option name="closed" value="true" />
+      <created>1715380755893</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715380755893</updated>
+    </task>
+    <task id="LOCAL-00014" summary="wait">
+      <option name="closed" value="true" />
+      <created>1715382067291</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715382067291</updated>
+    </task>
+    <task id="LOCAL-00015" summary="done mainwindow">
+      <option name="closed" value="true" />
+      <created>1715382177653</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1715382177653</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +281,45 @@
     <MESSAGE value="optimise for step-by-step solving" />
     <MESSAGE value="segment parse separately from intersectionsearch" />
     <MESSAGE value="do drawing pt 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="do drawing pt 1" />
+    <MESSAGE value="do drawing pt 2" />
+    <MESSAGE value="Update menu buttons" />
+    <MESSAGE value="wait" />
+    <MESSAGE value="done mainwindow" />
+    <option name="LAST_COMMIT_MESSAGE" value="done mainwindow" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventHandler.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventHandler.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventHandler.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventHandler.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Segment.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

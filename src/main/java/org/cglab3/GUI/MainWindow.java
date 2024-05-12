@@ -38,8 +38,23 @@ public class MainWindow extends Container {
             if (BODrawer.BOSet()) {
                 BODrawer.nextEvent();
                 int[] nEvents = BODrawer.getEvents();
+                nEventsLabel.setText("Оброблено подій: " + nEvents[0]);
+                nIntersectionsLabel.setText("З них перетинів: " + nEvents[1]);
                 if (!BODrawer.checkNextEvent()) {
                     nextEventButton.setEnabled(false);
+                }
+            }
+        });
+
+        applyOffsetsButton.addActionListener(e -> {
+            if(!offset1TextField.getText().isBlank() && !offset2TextField.getText().isBlank()) {
+                try {
+                    int offset1 = Integer.parseInt(offset1TextField.getText());
+                    int offset2 = Integer.parseInt(offset2TextField.getText());
+                    BODrawer.setOffsets(new int[]{offset1, offset2});
+                    BODrawer.drawBO();
+                } catch (NumberFormatException exception) {
+
                 }
             }
         });
@@ -54,29 +69,6 @@ public class MainWindow extends Container {
                 }
             }
         });
-
-        offset1TextField.getDocument().addDocumentListener(regTFListener());
-
-        offset2TextField.getDocument().addDocumentListener(regTFListener());
-    }
-
-    public DocumentListener regTFListener() {
-        return new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                insertUpdate(e);
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-
-            }
-        };
     }
 
     public static void main(String[] args) {

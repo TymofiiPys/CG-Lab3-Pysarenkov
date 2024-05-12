@@ -28,7 +28,7 @@ class EventHandler {
         Segment leftNeighbour = status.lower(segment);
         Segment rightNeighbour = status.higher(segment);
         // Remove segment from the status
-        status.add(segment);
+        status.remove(segment);
         // Check if the segment's ex-neighbours intersect (again, if they exist)
         // and if so add intersection event to the PQ
         if (leftNeighbour != null && rightNeighbour != null)

@@ -42,6 +42,7 @@ public class IntersectionSearch {
         Event e = events.poll();
         nEvents++;
         log.info("Got event №" + nEvents + ": " + e.toString());
+        Segment.currentY = e.getAssociatedPoint().y;
         processedEvents.add(e);
         switch (e.getEventType()) {
             case INTERSECTION -> {
