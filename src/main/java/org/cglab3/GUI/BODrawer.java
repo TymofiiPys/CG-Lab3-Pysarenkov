@@ -2,6 +2,7 @@ package org.cglab3.GUI;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.cglab3.BentleyOttmann.BOInfo;
 import org.cglab3.BentleyOttmann.Event;
 import org.cglab3.BentleyOttmann.IntersectionSearch;
 import org.cglab3.BentleyOttmann.Segment;
@@ -113,9 +114,14 @@ public class BODrawer {
         }
     }
 
-    public void nextEvent() {
+    public BOInfo nextEvent() {
         BO.nextEvent();
         this.drawBO();
+        return new BOInfo(
+                BO.getNEvents(),
+                BO.getNIntersections(),
+                BO.getLastEventInfo()
+        );
     }
 
     public boolean checkNextEvent() {

@@ -3,6 +3,8 @@ package org.cglab3.GUI;
 //import org.example.GUI.Lab1MenuBar;
 //import org.example.GUI.RegTreeDrawer;
 
+import org.cglab3.BentleyOttmann.BOInfo;
+
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -24,6 +26,7 @@ public class MainWindow extends Container {
     private JButton applyOffsetsButton;
     private JLabel nIntersectionsLabel;
     private JLabel nEventsLabel;
+    private JLabel eventInfoLabel;
     public final Dimension mainWindowDims = new Dimension(600, 500);
     public final BODrawer BODrawer;
 
@@ -36,10 +39,10 @@ public class MainWindow extends Container {
         //button action listeners
         nextEventButton.addActionListener(e -> {
             if (BODrawer.BOSet()) {
-                BODrawer.nextEvent();
-                int[] nEvents = BODrawer.getEvents();
-                nEventsLabel.setText("Оброблено подій: " + nEvents[0]);
-                nIntersectionsLabel.setText("З них перетинів: " + nEvents[1]);
+                BOInfo info = BODrawer.nextEvent();
+                nEventsLabel.setText("Оброблено подій: " + info.getNEvents());
+                nIntersectionsLabel.setText("З них перетинів: " + info.getNIntersections());
+                eventInfoLabel.setText(info.getLastEventInfo());
                 if (!BODrawer.checkNextEvent()) {
                     nextEventButton.setEnabled(false);
                 }

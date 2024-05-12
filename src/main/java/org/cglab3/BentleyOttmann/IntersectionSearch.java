@@ -15,6 +15,7 @@ public class IntersectionSearch {
     private int nEvents = 0;
     private int nIntersections = 0;
     private final ArrayList<Event> processedEvents = new ArrayList<>();
+    private String lastEventInfo;
 
     public IntersectionSearch(ArrayList<Segment> segments) {
         this.segments = segments;
@@ -42,6 +43,7 @@ public class IntersectionSearch {
         Event e = events.poll();
         nEvents++;
         log.info("Got event №" + nEvents + ": " + e.toString());
+        formEventInfo(e);
         Segment.currentY = e.getAssociatedPoint().y;
         processedEvents.add(e);
         switch (e.getEventType()) {
@@ -52,5 +54,18 @@ public class IntersectionSearch {
             case START -> EventHandler.handleStartEvent(e.getSegment(), events, status);
             case END -> EventHandler.handleEndEvent(e.getSegment(), events, status);
         }
+    }
+
+    private void formEventInfo(Event e) {
+        String type;
+        switch (e.getEventType()) {
+            case INTERSECTION -> type = "Перетин відрізків";
+            case START -> type = "Початок відрізка";
+            case END -> type = "Кінець відрізка";
+            default -> type = "???";
+        }
+        lastEventInfo = "<html> Подія №" + nEvents + "<br>" +
+                "Тип: " + type + "<br>" +
+                "Координата: (" + Math.round(e.getAssociatedPoint().x) + ", " + Math.round(e.getAssociatedPoint().y) + ") </html>";
     }
 }
