@@ -21,9 +21,7 @@ public class Event {
         this.segment = segment;
         this.segment2 = segment2;
         switch (this.eventType) {
-            case INTERSECTION -> {
-                this.associatedPoint = intersectionPoint;
-            }
+            case INTERSECTION -> this.associatedPoint = intersectionPoint;
             case START -> {
                 if (segment.getStart().y < segment.getEnd().y
                         || (segment.getStart().y == segment.getEnd().y && segment.getEnd().x < segment.getStart().x)) {
@@ -40,9 +38,7 @@ public class Event {
                     this.associatedPoint = segment.getStart();
                 }
             }
-            default -> {
-                throw new IllegalArgumentException("No event type supplied");
-            }
+            default -> throw new IllegalArgumentException("No event type supplied");
         }
     }
 

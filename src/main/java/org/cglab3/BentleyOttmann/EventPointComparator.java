@@ -1,6 +1,5 @@
 package org.cglab3.BentleyOttmann;
 
-import java.awt.geom.Point2D;
 import java.util.Comparator;
 
 /**

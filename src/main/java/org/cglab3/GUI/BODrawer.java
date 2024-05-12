@@ -1,6 +1,5 @@
 package org.cglab3.GUI;
 
-import lombok.Getter;
 import lombok.Setter;
 import org.cglab3.BentleyOttmann.BOInfo;
 import org.cglab3.BentleyOttmann.Event;
@@ -11,12 +10,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Objects;
 
 public class BODrawer {
     private IntersectionSearch BO;
-    private ArrayList<Segment> segments;
     private final JPanel panelDraw;
     private final int nodesRad = 4;
     private final Stroke segmentStroke = new BasicStroke(3, BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER);
@@ -28,7 +25,6 @@ public class BODrawer {
 
     @Setter
     private int[] offsets = new int[]{0, 0};
-    private int layer = 0;
 
     public BODrawer(JPanel panelDraw) {
         this.panelDraw = panelDraw;
@@ -51,7 +47,7 @@ public class BODrawer {
     }
 
     private int[] calcOffsets() {
-        return new int[]{offsets[0] + panelDraw.getWidth()/2, offsets[1] + panelDraw.getHeight()/2};
+        return new int[]{offsets[0] + panelDraw.getWidth() / 2, offsets[1] + panelDraw.getHeight() / 2};
     }
 
     private void drawAxes(int[] offsets) {
@@ -106,7 +102,7 @@ public class BODrawer {
                 }
         );
         gr.setColor(statusColor);
-        if(!BO.getProcessedEvents().isEmpty()) {
+        if (!BO.getProcessedEvents().isEmpty()) {
             int currentY = (int) BO.getProcessedEvents().getLast().getAssociatedPoint().y;
             Point2D.Double adaptedStart = adaptToPanel(new Point2D.Double(0, currentY), panelOffsets);
             Point2D.Double adaptedEnd = adaptToPanel(new Point2D.Double(0, currentY), panelOffsets);
@@ -126,9 +122,5 @@ public class BODrawer {
 
     public boolean checkNextEvent() {
         return !BO.getEvents().isEmpty();
-    }
-
-    public int[] getEvents() {
-        return new int[]{BO.getNEvents(), BO.getNIntersections()};
     }
 }

@@ -6,11 +6,8 @@ package org.cglab3.GUI;
 import org.cglab3.BentleyOttmann.BOInfo;
 
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.Point2D;
 
 public class MainWindow extends Container {
     public JButton nextEventButton;
@@ -50,14 +47,13 @@ public class MainWindow extends Container {
         });
 
         applyOffsetsButton.addActionListener(e -> {
-            if(!offset1TextField.getText().isBlank() && !offset2TextField.getText().isBlank()) {
+            if (!offset1TextField.getText().isBlank() && !offset2TextField.getText().isBlank()) {
                 try {
                     int offset1 = Integer.parseInt(offset1TextField.getText());
                     int offset2 = Integer.parseInt(offset2TextField.getText());
                     BODrawer.setOffsets(new int[]{offset1, offset2});
                     BODrawer.drawBO();
-                } catch (NumberFormatException exception) {
-
+                } catch (NumberFormatException ignored) {
                 }
             }
         });

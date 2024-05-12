@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="IT WORKS">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/BOInfo.java" afterDir="false" />
+    <list default="true" id="45032f81-0229-4f84-8b3c-42b372727248" name="Changes" comment="FIN">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/IntersectionSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventPointComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/EventPointComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/BODrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/BODrawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cglab3/GUI/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +129,7 @@
       <workItem from="1715243955232" duration="14751000" />
       <workItem from="1715354878170" duration="18559000" />
       <workItem from="1715506415619" duration="3141000" />
-      <workItem from="1715512555821" duration="6408000" />
+      <workItem from="1715512555821" duration="6731000" />
     </task>
     <task id="LOCAL-00001" summary="Create essential classes, begin implementing Events and Handlers">
       <option name="closed" value="true" />
@@ -268,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715529279845</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="FIN">
+      <option name="closed" value="true" />
+      <created>1715530117944</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715530117944</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +310,8 @@
     <MESSAGE value="done mainwindow" />
     <MESSAGE value="load of fixes" />
     <MESSAGE value="IT WORKS" />
-    <option name="LAST_COMMIT_MESSAGE" value="IT WORKS" />
+    <MESSAGE value="FIN" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIN" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -312,11 +320,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/cglab3/BentleyOttmann/Segment.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
