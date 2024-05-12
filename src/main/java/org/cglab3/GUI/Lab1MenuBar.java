@@ -29,6 +29,7 @@ public class Lab1MenuBar extends JMenuBar {
             mw.BODrawer.setSegments(SegmentParser.readFromFile(filePath.toString()));
             mw.nextEventButton.setEnabled(true);
             mw.BODrawer.drawBO();
+            mw.clearEventBoxes();
         }));
         JMenuItem exitMI = new JMenuItem("Вийти");
         exitMI.addActionListener(e -> System.exit(0));

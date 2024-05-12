@@ -43,9 +43,13 @@ class EventHandler {
                 + " at y=" + currentY);
         // Add a little to currentY so comparing intersecting segments doesn't show they're equal,
         // thus making it possible (or just easier) to find neighbors of the segments
-        Segment.currentY = currentY + deltaY;
+        ArrayList<Segment> temp = new ArrayList<>(status);
+        status.clear();
+        Segment.currentY = currentY - deltaY;
+        status.addAll(temp);
         // Determine which of the segments is to the left and which is to the right
-        if (new SegmentXComparator().compare(segment, segment2) < 0) {
+        assert status.comparator() != null;
+        if (status.comparator().compare(segment, segment2) < 0) {
             // If segment is to the left of segment2
             // Search for left neighbour of segment and right neighbour of segment2
             // and find intersections of segment and its left neighbour

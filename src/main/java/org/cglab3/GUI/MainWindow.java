@@ -71,6 +71,11 @@ public class MainWindow extends Container {
         });
     }
 
+    public void clearEventBoxes() {
+        this.nEventsLabel.setText("");
+        this.nIntersectionsLabel.setText("");
+    }
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("ЛР№3. Перетин відрізків на площині (Bentley–Ottmann).");
         MainWindow mw = new MainWindow();

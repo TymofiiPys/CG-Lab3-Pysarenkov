@@ -107,9 +107,9 @@ public class BODrawer {
         gr.setColor(statusColor);
         if(!BO.getProcessedEvents().isEmpty()) {
             int currentY = (int) BO.getProcessedEvents().getLast().getAssociatedPoint().y;
-            Point2D.Double adaptedStart = adaptToPanel(new Point2D.Double(50, currentY), panelOffsets);
-            Point2D.Double adaptedEnd = adaptToPanel(new Point2D.Double(300, currentY), panelOffsets);
-            gr.drawLine((int) adaptedStart.x, (int) adaptedStart.y, (int) adaptedEnd.x, (int) adaptedEnd.y);
+            Point2D.Double adaptedStart = adaptToPanel(new Point2D.Double(0, currentY), panelOffsets);
+            Point2D.Double adaptedEnd = adaptToPanel(new Point2D.Double(0, currentY), panelOffsets);
+            gr.drawLine(0, (int) adaptedStart.y, panelDraw.getWidth(), (int) adaptedEnd.y);
         }
     }
 

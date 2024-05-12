@@ -54,12 +54,16 @@ public class Segment {
             double x = (b2 * c1 - b1 * c2) / determinant;
             double y = (a1 * c2 - a2 * c1) / determinant;
             //Now check that the point actually lies on segments:
-            if (Math.min(this.start.x, this.end.x) <= x && x <= Math.max(this.start.x, this.end.x)
-                    && Math.min(this.start.y, this.end.y) <= y && y <= Math.max(this.start.y, this.end.y))
+            if (this.liesOnSegment(x, y) && other.liesOnSegment(x, y))
                 return Optional.of(new Point2D.Double(x, y));
             else
                 return Optional.empty();
         }
+    }
+
+    private boolean liesOnSegment(double x, double y) {
+        return Math.min(this.start.x, this.end.x) <= x && x <= Math.max(this.start.x, this.end.x)
+                && Math.min(this.start.y, this.end.y) <= y && y <= Math.max(this.start.y, this.end.y);
     }
 
     public double getCurrentX() {
